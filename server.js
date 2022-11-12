@@ -15,6 +15,9 @@ io.on('connection', socket => {
     socket.on('data1', function(data){
 
         socket.broadcast.emit('message', data);
+    });
+    socket.on('usersign', function(data){
+        socket.broadcast.emit('addtocontact', data);
     })
     socket.on('disconnect', () => console.log('disconnected')); 
 });
